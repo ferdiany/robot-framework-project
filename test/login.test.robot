@@ -5,7 +5,8 @@ Suite Teardown  Close Browser
 
 *** Test Cases ***
 Admin successfully Login to OrangeHRM Website
-    Input Username
-    Input Password
+    [Tags]  Positive
+    login.resource.Input Username   ${userLogin}
+    login.resource.Input Password   ${password}
     Click Login Button
     Verify Admin Success Login

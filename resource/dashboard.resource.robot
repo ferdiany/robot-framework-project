@@ -1,6 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary     run_on_failure=NOTHING
-Resource    ../data/dashboard.data.robot
+Resource    ../data/data.robot
 
 *** Keywords ***
 Click Dashboard Menu
@@ -41,4 +41,4 @@ Click My Timesheets Icon
     Click Element                   xpath=//a[@href=${myTimesheet}]/img
 Verify My Timesheets Menu
     Element Should Contain          xpath=//li[@class="selected"]/a         Timesheets
-    Element Should Contain          xpath=//div[@class="top"]/h3           Timesheet for Week
+    Element Should Contain          xpath=//div[@class="top"]/h3            Timesheet for Week

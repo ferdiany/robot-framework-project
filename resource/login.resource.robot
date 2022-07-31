@@ -1,16 +1,18 @@
 *** Settings ***
-Library     SeleniumLibrary
-Resource    ../data/login.data.robot
+Library     SeleniumLibrary     run_on_failure=NOTHING
+Resource    ../data/data.robot
 
 *** Keywords ***
 Admin go to OrangeHRM Website
     Open Browser                    ${LoginUrl}                     ${Browser} 
 
 Input Username
-    Input Text                      id:txtUsername                  ${username}
+    [Arguments]                     ${text}
+    Input Text                      id:txtUsername                  ${text}
 
 Input Password
-    Input Text                      id:txtPassword                  ${password}
+    [Arguments]                     ${text}
+    Input Text                      id:txtPassword                  ${text}
 
 Click Login Button
     Click Element                   id:btnLogin
@@ -24,6 +26,6 @@ Close Browser
 
 Login to OrangeHRM Website
     Open Browser                    ${LoginUrl}                     ${Browser}
-    Input Text                      id:txtUsername                  ${username}
+    Input Text                      id:txtUsername                  ${userLogin}
     Input Text                      id:txtPassword                  ${password}
     Click Element                   id:btnLogin
