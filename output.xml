@@ -1,0 +1,2533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20220731 16:36:42.637" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="/home/ferdian/Documents/My Github Project/robot-framework-project/test">
+<suite id="s1-s1" name="Admin.Test" source="/home/ferdian/Documents/My Github Project/robot-framework-project/test/admin.test.robot">
+<kw name="Login to OrangeHRM Website" library="login.resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LoginUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 16:36:42.740" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20220731 16:36:42.740" endtime="20220731 16:36:49.846"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtUsername</arg>
+<arg>${userLogin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:36:49.847" level="INFO">Typing text 'Admin' into text field 'id:txtUsername'.</msg>
+<status status="PASS" starttime="20220731 16:36:49.846" endtime="20220731 16:36:49.894"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtPassword</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:36:49.895" level="INFO">Typing text 'admin123' into text field 'id:txtPassword'.</msg>
+<status status="PASS" starttime="20220731 16:36:49.895" endtime="20220731 16:36:49.937"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:36:49.937" level="INFO">Clicking element 'id:btnLogin'.</msg>
+<status status="PASS" starttime="20220731 16:36:49.937" endtime="20220731 16:36:55.450"/>
+</kw>
+<status status="PASS" starttime="20220731 16:36:42.740" endtime="20220731 16:36:55.450"/>
+</kw>
+<test id="s1-s1-t1" name="Admin Successfully Go To Admin Menu" line="9">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:36:55.451" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:36:55.451" endtime="20220731 16:36:57.680"/>
+</kw>
+<status status="PASS" starttime="20220731 16:36:55.451" endtime="20220731 16:36:57.680"/>
+</kw>
+<kw name="Verify Admin Menu Open" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>User Management</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:36:57.697" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'User Management'.</msg>
+<status status="PASS" starttime="20220731 16:36:57.681" endtime="20220731 16:36:57.697"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>System Users</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:36:57.710" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'System Users'.</msg>
+<status status="PASS" starttime="20220731 16:36:57.697" endtime="20220731 16:36:57.710"/>
+</kw>
+<status status="PASS" starttime="20220731 16:36:57.680" endtime="20220731 16:36:57.710"/>
+</kw>
+<tag>Create User</tag>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:36:55.450" endtime="20220731 16:36:57.711"/>
+</test>
+<test id="s1-s1-t2" name="Admin Successfully Create New User" line="14">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:36:57.712" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:36:57.712" endtime="20220731 16:36:58.966"/>
+</kw>
+<status status="PASS" starttime="20220731 16:36:57.711" endtime="20220731 16:36:58.966"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:36:58.967" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:36:58.966" endtime="20220731 16:36:59.746"/>
+</kw>
+<status status="PASS" starttime="20220731 16:36:58.966" endtime="20220731 16:36:59.746"/>
+</kw>
+<kw name="Choose User Role" library="admin.resource">
+<arg>${userRole}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:systemUser_userType</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:36:59.747" level="INFO">Clicking element 'id:systemUser_userType'.</msg>
+<status status="PASS" starttime="20220731 16:36:59.747" endtime="20220731 16:36:59.785"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:systemUser_userType</arg>
+<arg>${role}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220731 16:36:59.786" level="INFO">Selecting options from selection list 'id:systemUser_userType' by label Admin.</msg>
+<status status="PASS" starttime="20220731 16:36:59.785" endtime="20220731 16:36:59.823"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:01.324" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:36:59.823" endtime="20220731 16:37:01.324"/>
+</kw>
+<status status="PASS" starttime="20220731 16:36:59.746" endtime="20220731 16:37:01.324"/>
+</kw>
+<kw name="Input Employee Name" library="admin.resource">
+<arg>${EmployeeName}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_employeeName_empName</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:01.325" level="INFO">Typing text 'Charlie Carter' into text field 'id:systemUser_employeeName_empName'.</msg>
+<status status="PASS" starttime="20220731 16:37:01.324" endtime="20220731 16:37:01.397"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:02.897" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:01.397" endtime="20220731 16:37:02.897"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:01.324" endtime="20220731 16:37:02.898"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${randomUser}</var>
+<arg>8</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220731 16:37:02.898" level="INFO">${randomUser} = us23wqJf</msg>
+<status status="PASS" starttime="20220731 16:37:02.898" endtime="20220731 16:37:02.898"/>
+</kw>
+<kw name="Input Username" library="admin.resource">
+<arg>${randomUser}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_userName</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:02.900" level="INFO">Typing text 'us23wqJf' into text field 'id:systemUser_userName'.</msg>
+<status status="PASS" starttime="20220731 16:37:02.899" endtime="20220731 16:37:02.960"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:04.460" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:02.960" endtime="20220731 16:37:04.460"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:02.899" endtime="20220731 16:37:04.461"/>
+</kw>
+<kw name="Input Password" library="admin.resource">
+<arg>${betterPass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_password</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:04.462" level="INFO">Typing text 'Qaz132wsx' into text field 'id:systemUser_password'.</msg>
+<status status="PASS" starttime="20220731 16:37:04.462" endtime="20220731 16:37:04.525"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:06.026" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:04.525" endtime="20220731 16:37:06.026"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:04.461" endtime="20220731 16:37:06.026"/>
+</kw>
+<kw name="Input Confirm Password" library="admin.resource">
+<arg>${betterPass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_confirmPassword</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:06.028" level="INFO">Typing text 'Qaz132wsx' into text field 'id:systemUser_confirmPassword'.</msg>
+<status status="PASS" starttime="20220731 16:37:06.027" endtime="20220731 16:37:06.084"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:07.585" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:06.084" endtime="20220731 16:37:07.585"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:06.027" endtime="20220731 16:37:07.585"/>
+</kw>
+<kw name="Click Save Button" library="admin.resource">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>id:btnSave</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220731 16:37:07.586" endtime="20220731 16:37:07.614"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnSave</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:07.614" level="INFO">Clicking element 'id:btnSave'.</msg>
+<status status="PASS" starttime="20220731 16:37:07.614" endtime="20220731 16:37:09.194"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:07.585" endtime="20220731 16:37:09.194"/>
+</kw>
+<kw name="Verify User Created" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>System Users</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:09.221" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'System Users'.</msg>
+<status status="PASS" starttime="20220731 16:37:09.195" endtime="20220731 16:37:09.221"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>User Management</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:09.234" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'User Management'.</msg>
+<status status="PASS" starttime="20220731 16:37:09.221" endtime="20220731 16:37:09.234"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:09.194" endtime="20220731 16:37:09.234"/>
+</kw>
+<tag>Create User</tag>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:36:57.711" endtime="20220731 16:37:09.234"/>
+</test>
+<test id="s1-s1-t3" name="Create User with Blank Field" line="27">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:09.236" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:09.235" endtime="20220731 16:37:10.216"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:09.235" endtime="20220731 16:37:10.216"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:10.216" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:10.216" endtime="20220731 16:37:10.683"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:10.216" endtime="20220731 16:37:10.683"/>
+</kw>
+<kw name="Click Save Button" library="admin.resource">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>id:btnSave</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220731 16:37:10.684" endtime="20220731 16:37:10.710"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnSave</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:10.710" level="INFO">Clicking element 'id:btnSave'.</msg>
+<status status="PASS" starttime="20220731 16:37:10.710" endtime="20220731 16:37:10.739"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:10.683" endtime="20220731 16:37:10.739"/>
+</kw>
+<kw name="Verify Blank Error" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//span[@for='systemUser_employeeName_empName']</arg>
+<arg>${msgEmpNotFound}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:10.756" level="INFO">Element 'xpath=//span[@for='systemUser_employeeName_empName']' contains text 'Employee does not exist'.</msg>
+<status status="PASS" starttime="20220731 16:37:10.740" endtime="20220731 16:37:10.756"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//span[@for='systemUser_userName']</arg>
+<arg>${msgBlankError}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:10.769" level="INFO">Element 'xpath=//span[@for='systemUser_userName']' contains text 'Required'.</msg>
+<status status="PASS" starttime="20220731 16:37:10.756" endtime="20220731 16:37:10.769"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//span[@for='systemUser_password']</arg>
+<arg>${msgBlankError}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:10.781" level="INFO">Element 'xpath=//span[@for='systemUser_password']' contains text 'Required'.</msg>
+<status status="PASS" starttime="20220731 16:37:10.769" endtime="20220731 16:37:10.782"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:10.739" endtime="20220731 16:37:10.782"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:09.234" endtime="20220731 16:37:10.782"/>
+</test>
+<test id="s1-s1-t4" name="Create User with Unlisted Employee" line="34">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:10.783" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:10.783" endtime="20220731 16:37:12.064"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:10.782" endtime="20220731 16:37:12.064"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:12.064" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:12.064" endtime="20220731 16:37:12.532"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:12.064" endtime="20220731 16:37:12.532"/>
+</kw>
+<kw name="Input Employee Name" library="admin.resource">
+<arg>${unlistedEmp}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_employeeName_empName</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:12.533" level="INFO">Typing text 'Ronaldowati' into text field 'id:systemUser_employeeName_empName'.</msg>
+<status status="PASS" starttime="20220731 16:37:12.533" endtime="20220731 16:37:12.589"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:14.090" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:12.589" endtime="20220731 16:37:14.090"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:12.532" endtime="20220731 16:37:14.090"/>
+</kw>
+<kw name="Verify Unlisted Employee Error" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//span[@for='systemUser_employeeName_empName']</arg>
+<arg>${msgEmpNotFound}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:14.111" level="INFO">Element 'xpath=//span[@for='systemUser_employeeName_empName']' contains text 'Employee does not exist'.</msg>
+<status status="PASS" starttime="20220731 16:37:14.091" endtime="20220731 16:37:14.111"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:14.091" endtime="20220731 16:37:14.111"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:10.782" endtime="20220731 16:37:14.112"/>
+</test>
+<test id="s1-s1-t5" name="Create User with Invalid Username" line="41">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:14.113" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:14.112" endtime="20220731 16:37:15.443"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:14.112" endtime="20220731 16:37:15.443"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:15.444" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:15.444" endtime="20220731 16:37:15.900"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:15.443" endtime="20220731 16:37:15.900"/>
+</kw>
+<kw name="Input Username" library="admin.resource">
+<arg>${invalidData}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_userName</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:15.901" level="INFO">Typing text 'abc' into text field 'id:systemUser_userName'.</msg>
+<status status="PASS" starttime="20220731 16:37:15.901" endtime="20220731 16:37:15.950"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:17.451" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:15.950" endtime="20220731 16:37:17.451"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:15.900" endtime="20220731 16:37:17.451"/>
+</kw>
+<kw name="Verify Invalid Username Error" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//span[@for='systemUser_userName']</arg>
+<arg>${msgInvalideUsername}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:17.471" level="INFO">Element 'xpath=//span[@for='systemUser_userName']' contains text 'Should have at least 5 characters'.</msg>
+<status status="PASS" starttime="20220731 16:37:17.452" endtime="20220731 16:37:17.471"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:17.451" endtime="20220731 16:37:17.471"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:14.112" endtime="20220731 16:37:17.471"/>
+</test>
+<test id="s1-s1-t6" name="Create User with Invalid Password" line="48">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:17.472" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:17.472" endtime="20220731 16:37:18.729"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:17.471" endtime="20220731 16:37:18.730"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:18.730" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:18.730" endtime="20220731 16:37:19.220"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:18.730" endtime="20220731 16:37:19.221"/>
+</kw>
+<kw name="Input Password" library="admin.resource">
+<arg>${invalidData}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_password</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:19.221" level="INFO">Typing text 'abc' into text field 'id:systemUser_password'.</msg>
+<status status="PASS" starttime="20220731 16:37:19.221" endtime="20220731 16:37:19.274"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:20.775" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:19.274" endtime="20220731 16:37:20.775"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:19.221" endtime="20220731 16:37:20.775"/>
+</kw>
+<kw name="Verify Invalid Password Error" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//span[@for='systemUser_password']</arg>
+<arg>${msgInvalidPassword}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:20.802" level="INFO">Element 'xpath=//span[@for='systemUser_password']' contains text 'Should have at least 8 characters'.</msg>
+<status status="PASS" starttime="20220731 16:37:20.776" endtime="20220731 16:37:20.802"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:20.775" endtime="20220731 16:37:20.802"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:17.471" endtime="20220731 16:37:20.802"/>
+</test>
+<test id="s1-s1-t7" name="Create User with Mismatch Password" line="55">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:20.803" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:20.803" endtime="20220731 16:37:22.043"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:20.803" endtime="20220731 16:37:22.043"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:22.044" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:22.044" endtime="20220731 16:37:22.590"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:22.044" endtime="20220731 16:37:22.590"/>
+</kw>
+<kw name="Input Password" library="admin.resource">
+<arg>${weakPass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_password</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:22.592" level="INFO">Typing text 'qazwsx132' into text field 'id:systemUser_password'.</msg>
+<status status="PASS" starttime="20220731 16:37:22.591" endtime="20220731 16:37:22.654"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:24.154" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:22.654" endtime="20220731 16:37:24.155"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:22.591" endtime="20220731 16:37:24.155"/>
+</kw>
+<kw name="Input Confirm Password" library="admin.resource">
+<arg>${veryWeakPass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_confirmPassword</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:24.157" level="INFO">Typing text '12345678' into text field 'id:systemUser_confirmPassword'.</msg>
+<status status="PASS" starttime="20220731 16:37:24.156" endtime="20220731 16:37:24.216"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:25.716" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:24.216" endtime="20220731 16:37:25.716"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:24.155" endtime="20220731 16:37:25.717"/>
+</kw>
+<kw name="Verify Confirm Password Error" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//span[@for='systemUser_confirmPassword']</arg>
+<arg>${msgConfirmPassword}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:25.741" level="INFO">Element 'xpath=//span[@for='systemUser_confirmPassword']' contains text 'Passwords do not match'.</msg>
+<status status="PASS" starttime="20220731 16:37:25.717" endtime="20220731 16:37:25.742"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:25.717" endtime="20220731 16:37:25.742"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:20.802" endtime="20220731 16:37:25.742"/>
+</test>
+<test id="s1-s1-t8" name="Create User with Very Weak Password" line="63">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:25.743" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:25.743" endtime="20220731 16:37:27.123"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:25.743" endtime="20220731 16:37:27.123"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:27.124" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:27.123" endtime="20220731 16:37:27.623"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:27.123" endtime="20220731 16:37:27.624"/>
+</kw>
+<kw name="Input Password" library="admin.resource">
+<arg>${veryWeakPass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_password</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:27.625" level="INFO">Typing text '12345678' into text field 'id:systemUser_password'.</msg>
+<status status="PASS" starttime="20220731 16:37:27.625" endtime="20220731 16:37:27.679"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:29.180" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:27.679" endtime="20220731 16:37:29.180"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:27.624" endtime="20220731 16:37:29.180"/>
+</kw>
+<kw name="Verify Very Weak Password" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>id:systemUser_password_strength_meter</arg>
+<arg>${passVeryWeak}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:29.207" level="INFO">Element 'id:systemUser_password_strength_meter' contains text 'Very Weak'.</msg>
+<status status="PASS" starttime="20220731 16:37:29.181" endtime="20220731 16:37:29.207"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:29.181" endtime="20220731 16:37:29.207"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:25.743" endtime="20220731 16:37:29.207"/>
+</test>
+<test id="s1-s1-t9" name="Create User with Weak Password" line="70">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:29.208" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:29.208" endtime="20220731 16:37:30.502"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:29.208" endtime="20220731 16:37:30.502"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:30.502" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:30.502" endtime="20220731 16:37:31.099"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:30.502" endtime="20220731 16:37:31.099"/>
+</kw>
+<kw name="Input Password" library="admin.resource">
+<arg>${weakPass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_password</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:31.100" level="INFO">Typing text 'qazwsx132' into text field 'id:systemUser_password'.</msg>
+<status status="PASS" starttime="20220731 16:37:31.100" endtime="20220731 16:37:31.156"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:32.657" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:31.156" endtime="20220731 16:37:32.657"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:31.099" endtime="20220731 16:37:32.657"/>
+</kw>
+<kw name="Verify Weak Password" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>id:systemUser_password_strength_meter</arg>
+<arg>${passWeak}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:32.675" level="INFO">Element 'id:systemUser_password_strength_meter' contains text 'Weak'.</msg>
+<status status="PASS" starttime="20220731 16:37:32.658" endtime="20220731 16:37:32.675"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:32.658" endtime="20220731 16:37:32.675"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:29.207" endtime="20220731 16:37:32.676"/>
+</test>
+<test id="s1-s1-t10" name="Create User with Better Password" line="77">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:32.677" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:32.677" endtime="20220731 16:37:33.880"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:32.677" endtime="20220731 16:37:33.880"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:33.881" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:33.880" endtime="20220731 16:37:34.362"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:33.880" endtime="20220731 16:37:34.362"/>
+</kw>
+<kw name="Input Password" library="admin.resource">
+<arg>${betterPass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_password</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:34.363" level="INFO">Typing text 'Qaz132wsx' into text field 'id:systemUser_password'.</msg>
+<status status="PASS" starttime="20220731 16:37:34.363" endtime="20220731 16:37:34.421"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:35.922" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:34.422" endtime="20220731 16:37:35.922"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:34.362" endtime="20220731 16:37:35.922"/>
+</kw>
+<kw name="Verify Better Password" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>id:systemUser_password_strength_meter</arg>
+<arg>${passBetter}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:35.952" level="INFO">Element 'id:systemUser_password_strength_meter' contains text 'Better'.</msg>
+<status status="PASS" starttime="20220731 16:37:35.923" endtime="20220731 16:37:35.952"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:35.923" endtime="20220731 16:37:35.952"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:32.676" endtime="20220731 16:37:35.952"/>
+</test>
+<test id="s1-s1-t11" name="Create User with Strongest Password" line="84">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:35.953" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:35.953" endtime="20220731 16:37:37.111"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:35.953" endtime="20220731 16:37:37.111"/>
+</kw>
+<kw name="Click Add Button" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnAdd</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:37.112" level="INFO">Clicking element 'id:btnAdd'.</msg>
+<status status="PASS" starttime="20220731 16:37:37.111" endtime="20220731 16:37:37.585"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:37.111" endtime="20220731 16:37:37.585"/>
+</kw>
+<kw name="Input Password" library="admin.resource">
+<arg>${strongestPass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:systemUser_password</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:37.585" level="INFO">Typing text 'Sanbercode100%' into text field 'id:systemUser_password'.</msg>
+<status status="PASS" starttime="20220731 16:37:37.585" endtime="20220731 16:37:37.646"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:39.147" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:37.646" endtime="20220731 16:37:39.147"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:37.585" endtime="20220731 16:37:39.147"/>
+</kw>
+<kw name="Verify Strongest Password" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>id:systemUser_password_strength_meter</arg>
+<arg>${passStrongest}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:39.171" level="INFO">Element 'id:systemUser_password_strength_meter' contains text 'Strongest'.</msg>
+<status status="PASS" starttime="20220731 16:37:39.148" endtime="20220731 16:37:39.171"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:39.148" endtime="20220731 16:37:39.171"/>
+</kw>
+<tag>Create User</tag>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:37:35.953" endtime="20220731 16:37:39.172"/>
+</test>
+<test id="s1-s1-t12" name="Search By Username" line="91">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:39.173" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:39.172" endtime="20220731 16:37:40.430"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:39.172" endtime="20220731 16:37:40.430"/>
+</kw>
+<kw name="Input Search Username" library="admin.resource">
+<arg>${searchUsername}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:searchSystemUser_userName</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:40.431" level="INFO">Typing text 'Charlie.Carter' into text field 'id:searchSystemUser_userName'.</msg>
+<status status="PASS" starttime="20220731 16:37:40.431" endtime="20220731 16:37:40.486"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:41.986" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:40.486" endtime="20220731 16:37:41.986"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:40.430" endtime="20220731 16:37:41.986"/>
+</kw>
+<kw name="Click Search Button" library="admin.resource">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220731 16:37:41.987" endtime="20220731 16:37:42.021"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:42.021" level="INFO">Clicking element 'id:searchBtn'.</msg>
+<status status="PASS" starttime="20220731 16:37:42.021" endtime="20220731 16:37:42.573"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:41.987" endtime="20220731 16:37:42.573"/>
+</kw>
+<kw name="Verify Search Found" library="admin.resource">
+<arg>${searchUsername}</arg>
+<arg>1</arg>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://td[@class="left"][${row}]</arg>
+<arg>${search}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:42.592" level="INFO">Element 'xpath://td[@class="left"][1]' contains text 'Charlie.Carter'.</msg>
+<status status="PASS" starttime="20220731 16:37:42.574" endtime="20220731 16:37:42.592"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:42.573" endtime="20220731 16:37:42.592"/>
+</kw>
+<tag>Positive</tag>
+<tag>Search User</tag>
+<status status="PASS" starttime="20220731 16:37:39.172" endtime="20220731 16:37:42.592"/>
+</test>
+<test id="s1-s1-t13" name="Search By Role" line="98">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:42.594" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:42.594" endtime="20220731 16:37:43.513"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:42.593" endtime="20220731 16:37:43.513"/>
+</kw>
+<kw name="Input Search Role" library="admin.resource">
+<arg>${userRole}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:searchSystemUser_userType</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:43.515" level="INFO">Clicking element 'id:searchSystemUser_userType'.</msg>
+<status status="PASS" starttime="20220731 16:37:43.514" endtime="20220731 16:37:43.555"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:searchSystemUser_userType</arg>
+<arg>${role}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220731 16:37:43.556" level="INFO">Selecting options from selection list 'id:searchSystemUser_userType' by label Admin.</msg>
+<status status="PASS" starttime="20220731 16:37:43.555" endtime="20220731 16:37:43.589"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:45.089" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:43.589" endtime="20220731 16:37:45.089"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:43.514" endtime="20220731 16:37:45.090"/>
+</kw>
+<kw name="Click Search Button" library="admin.resource">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220731 16:37:45.090" endtime="20220731 16:37:45.113"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:45.113" level="INFO">Clicking element 'id:searchBtn'.</msg>
+<status status="PASS" starttime="20220731 16:37:45.113" endtime="20220731 16:37:45.688"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:45.090" endtime="20220731 16:37:45.688"/>
+</kw>
+<kw name="Verify Search Found" library="admin.resource">
+<arg>${userRole}</arg>
+<arg>2</arg>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://td[@class="left"][${row}]</arg>
+<arg>${search}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:45.718" level="INFO">Element 'xpath://td[@class="left"][2]' contains text 'Admin'.</msg>
+<status status="PASS" starttime="20220731 16:37:45.688" endtime="20220731 16:37:45.718"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:45.688" endtime="20220731 16:37:45.718"/>
+</kw>
+<tag>Positive</tag>
+<tag>Search User</tag>
+<status status="PASS" starttime="20220731 16:37:42.593" endtime="20220731 16:37:45.718"/>
+</test>
+<test id="s1-s1-t14" name="Search By Employee Name" line="105">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:45.719" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:45.719" endtime="20220731 16:37:46.947"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:45.719" endtime="20220731 16:37:46.947"/>
+</kw>
+<kw name="Input Search Employee" library="admin.resource">
+<arg>${EmployeeName}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:searchSystemUser_employeeName_empName</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:46.948" level="INFO">Typing text 'Charlie Carter' into text field 'id:searchSystemUser_employeeName_empName'.</msg>
+<status status="PASS" starttime="20220731 16:37:46.948" endtime="20220731 16:37:47.001"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:searchSystemUser_employeeName_empName</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:37:47.001" level="INFO">Sending key(s) ('RETURN',) to id:searchSystemUser_employeeName_empName element.</msg>
+<msg timestamp="20220731 16:37:47.281" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:37:47.281" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:37:47.001" endtime="20220731 16:37:47.289"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:48.790" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:47.289" endtime="20220731 16:37:48.790"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:46.948" endtime="20220731 16:37:48.790"/>
+</kw>
+<kw name="Click Search Button" library="admin.resource">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220731 16:37:48.791" endtime="20220731 16:37:48.810"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:48.810" level="INFO">Clicking element 'id:searchBtn'.</msg>
+<status status="PASS" starttime="20220731 16:37:48.810" endtime="20220731 16:37:49.304"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:48.790" endtime="20220731 16:37:49.304"/>
+</kw>
+<kw name="Verify Search Found" library="admin.resource">
+<arg>${EmployeeName}</arg>
+<arg>3</arg>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://td[@class="left"][${row}]</arg>
+<arg>${search}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:49.330" level="INFO">Element 'xpath://td[@class="left"][3]' contains text 'Charlie Carter'.</msg>
+<status status="PASS" starttime="20220731 16:37:49.305" endtime="20220731 16:37:49.330"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:49.304" endtime="20220731 16:37:49.331"/>
+</kw>
+<tag>Positive</tag>
+<tag>Search User</tag>
+<status status="PASS" starttime="20220731 16:37:45.718" endtime="20220731 16:37:49.331"/>
+</test>
+<test id="s1-s1-t15" name="Search By Status" line="112">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:49.332" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:49.332" endtime="20220731 16:37:50.516"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:49.331" endtime="20220731 16:37:50.516"/>
+</kw>
+<kw name="Input Search Status" library="admin.resource">
+<arg>${userStatus}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:searchSystemUser_status</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:50.517" level="INFO">Clicking element 'id:searchSystemUser_status'.</msg>
+<status status="PASS" starttime="20220731 16:37:50.517" endtime="20220731 16:37:50.561"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:searchSystemUser_status</arg>
+<arg>${status}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220731 16:37:50.561" level="INFO">Selecting options from selection list 'id:searchSystemUser_status' by label Enabled.</msg>
+<status status="PASS" starttime="20220731 16:37:50.561" endtime="20220731 16:37:50.597"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:52.097" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:50.597" endtime="20220731 16:37:52.097"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:50.517" endtime="20220731 16:37:52.098"/>
+</kw>
+<kw name="Click Search Button" library="admin.resource">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220731 16:37:52.098" endtime="20220731 16:37:52.117"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:52.118" level="INFO">Clicking element 'id:searchBtn'.</msg>
+<status status="PASS" starttime="20220731 16:37:52.117" endtime="20220731 16:37:53.010"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:52.098" endtime="20220731 16:37:53.010"/>
+</kw>
+<kw name="Verify Search Found" library="admin.resource">
+<arg>${userStatus}</arg>
+<arg>4</arg>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://td[@class="left"][${row}]</arg>
+<arg>${search}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:53.042" level="INFO">Element 'xpath://td[@class="left"][4]' contains text 'Enabled'.</msg>
+<status status="PASS" starttime="20220731 16:37:53.011" endtime="20220731 16:37:53.042"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:53.011" endtime="20220731 16:37:53.042"/>
+</kw>
+<tag>Positive</tag>
+<tag>Search User</tag>
+<status status="PASS" starttime="20220731 16:37:49.331" endtime="20220731 16:37:53.043"/>
+</test>
+<test id="s1-s1-t16" name="Search not Found" line="119">
+<kw name="Click Admin Menu" library="admin.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewAdminModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:53.044" level="INFO">Clicking element 'id:menu_admin_viewAdminModule'.</msg>
+<status status="PASS" starttime="20220731 16:37:53.043" endtime="20220731 16:37:54.250"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:53.043" endtime="20220731 16:37:54.250"/>
+</kw>
+<kw name="Input Search Username" library="admin.resource">
+<arg>${unlistedEmp}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:searchSystemUser_userName</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:54.251" level="INFO">Typing text 'Ronaldowati' into text field 'id:searchSystemUser_userName'.</msg>
+<status status="PASS" starttime="20220731 16:37:54.250" endtime="20220731 16:37:54.308"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:37:55.808" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:37:54.308" endtime="20220731 16:37:55.809"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:54.250" endtime="20220731 16:37:55.809"/>
+</kw>
+<kw name="Click Search Button" library="admin.resource">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220731 16:37:55.810" endtime="20220731 16:37:55.833"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:searchBtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:37:55.833" level="INFO">Clicking element 'id:searchBtn'.</msg>
+<status status="PASS" starttime="20220731 16:37:55.833" endtime="20220731 16:37:56.350"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:55.809" endtime="20220731 16:37:56.350"/>
+</kw>
+<kw name="Verify Search Not Found" library="admin.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://tbody/tr/td</arg>
+<arg>${dataNotFound}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:37:56.376" level="INFO">Element 'xpath://tbody/tr/td' contains text 'No Records Found'.</msg>
+<status status="PASS" starttime="20220731 16:37:56.350" endtime="20220731 16:37:56.376"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:56.350" endtime="20220731 16:37:56.376"/>
+</kw>
+<tag>Negative</tag>
+<tag>Search User</tag>
+<status status="PASS" starttime="20220731 16:37:53.043" endtime="20220731 16:37:56.376"/>
+</test>
+<kw name="Close Browser" library="login.resource" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220731 16:37:56.377" endtime="20220731 16:37:56.434"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:56.377" endtime="20220731 16:37:56.434"/>
+</kw>
+<status status="PASS" starttime="20220731 16:36:42.648" endtime="20220731 16:37:56.434"/>
+</suite>
+<suite id="s1-s2" name="Dashboard.Test" source="/home/ferdian/Documents/My Github Project/robot-framework-project/test/dashboard.test.robot">
+<kw name="Login to OrangeHRM Website" library="login.resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LoginUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 16:37:56.446" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20220731 16:37:56.445" endtime="20220731 16:38:03.183"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtUsername</arg>
+<arg>${userLogin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:03.184" level="INFO">Typing text 'Admin' into text field 'id:txtUsername'.</msg>
+<status status="PASS" starttime="20220731 16:38:03.184" endtime="20220731 16:38:03.229"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtPassword</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:03.230" level="INFO">Typing text 'admin123' into text field 'id:txtPassword'.</msg>
+<status status="PASS" starttime="20220731 16:38:03.229" endtime="20220731 16:38:03.271"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:03.272" level="INFO">Clicking element 'id:btnLogin'.</msg>
+<status status="PASS" starttime="20220731 16:38:03.271" endtime="20220731 16:38:08.729"/>
+</kw>
+<status status="PASS" starttime="20220731 16:37:56.445" endtime="20220731 16:38:08.729"/>
+</kw>
+<test id="s1-s2-t1" name="Admin want to go to Assign Leave menu from Dashboard Quick Launch List" line="9">
+<kw name="Click Dashboard Menu" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:08.730" endtime="20220731 16:38:08.746"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:08.746" level="INFO">Clicking element 'id:menu_dashboard_index'.</msg>
+<status status="PASS" starttime="20220731 16:38:08.746" endtime="20220731 16:38:09.296"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:08.729" endtime="20220731 16:38:09.296"/>
+</kw>
+<kw name="Click Assign Leave Icon" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${assignLeave}]/img</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:09.296" endtime="20220731 16:38:09.326"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${assignLeave}]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:09.327" level="INFO">Clicking element 'xpath=//a[@href="/index.php/leave/assignLeave"]/img'.</msg>
+<status status="PASS" starttime="20220731 16:38:09.326" endtime="20220731 16:38:10.795"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:09.296" endtime="20220731 16:38:10.796"/>
+</kw>
+<kw name="Verify Assign Leave Menu" library="dashboard.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Assign Leave</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:10.813" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Assign Leave'.</msg>
+<status status="PASS" starttime="20220731 16:38:10.796" endtime="20220731 16:38:10.813"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Assign Leave</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:10.827" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Assign Leave'.</msg>
+<status status="PASS" starttime="20220731 16:38:10.813" endtime="20220731 16:38:10.827"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:10.796" endtime="20220731 16:38:10.827"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:08.729" endtime="20220731 16:38:10.827"/>
+</test>
+<test id="s1-s2-t2" name="Admin want to go to Leave List menu from Dashboard Quick Launch List" line="15">
+<kw name="Click Dashboard Menu" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:10.828" endtime="20220731 16:38:10.837"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:10.837" level="INFO">Clicking element 'id:menu_dashboard_index'.</msg>
+<status status="PASS" starttime="20220731 16:38:10.837" endtime="20220731 16:38:11.333"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:10.828" endtime="20220731 16:38:11.333"/>
+</kw>
+<kw name="Click Leave List Icon" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${leaveList}]/img</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:11.333" endtime="20220731 16:38:11.351"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${leaveList}]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:11.351" level="INFO">Clicking element 'xpath=//a[@href="/index.php/leave/viewLeaveList"]/img'.</msg>
+<status status="PASS" starttime="20220731 16:38:11.351" endtime="20220731 16:38:13.254"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:11.333" endtime="20220731 16:38:13.254"/>
+</kw>
+<kw name="Verify Leave List Menu" library="dashboard.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Leave List</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:13.269" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Leave List'.</msg>
+<status status="PASS" starttime="20220731 16:38:13.254" endtime="20220731 16:38:13.269"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Leave List</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:13.280" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Leave List'.</msg>
+<status status="PASS" starttime="20220731 16:38:13.269" endtime="20220731 16:38:13.280"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:13.254" endtime="20220731 16:38:13.280"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:10.828" endtime="20220731 16:38:13.281"/>
+</test>
+<test id="s1-s2-t3" name="Admin want to go to Timesheets menu from Dashboard Quick Launch List" line="21">
+<kw name="Click Dashboard Menu" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:13.281" endtime="20220731 16:38:13.291"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:13.292" level="INFO">Clicking element 'id:menu_dashboard_index'.</msg>
+<status status="PASS" starttime="20220731 16:38:13.291" endtime="20220731 16:38:13.801"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:13.281" endtime="20220731 16:38:13.801"/>
+</kw>
+<kw name="Click Timesheets Icon" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${timesheets}]/img</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:13.801" endtime="20220731 16:38:13.827"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${timesheets}]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:13.828" level="INFO">Clicking element 'xpath=//a[@href="/index.php/time/viewEmployeeTimesheet"]/img'.</msg>
+<status status="PASS" starttime="20220731 16:38:13.827" endtime="20220731 16:38:14.990"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:13.801" endtime="20220731 16:38:14.990"/>
+</kw>
+<kw name="Verify Timesheets Menu" library="dashboard.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Timesheets</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:15.003" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Timesheets'.</msg>
+<status status="PASS" starttime="20220731 16:38:14.990" endtime="20220731 16:38:15.003"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Select Employee</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:15.014" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Select Employee'.</msg>
+<status status="PASS" starttime="20220731 16:38:15.003" endtime="20220731 16:38:15.014"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:14.990" endtime="20220731 16:38:15.014"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:13.281" endtime="20220731 16:38:15.014"/>
+</test>
+<test id="s1-s2-t4" name="Admin want to go to Apply Leave menu from Dashboard Quick Launch List" line="27">
+<kw name="Click Dashboard Menu" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:15.016" endtime="20220731 16:38:15.025"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:15.025" level="INFO">Clicking element 'id:menu_dashboard_index'.</msg>
+<status status="PASS" starttime="20220731 16:38:15.025" endtime="20220731 16:38:15.648"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:15.015" endtime="20220731 16:38:15.648"/>
+</kw>
+<kw name="Click Apply Leave Icon" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${applyLeave}]/img</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:15.648" endtime="20220731 16:38:15.663"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${applyLeave}]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:15.664" level="INFO">Clicking element 'xpath=//a[@href="/index.php/leave/applyLeave"]/img'.</msg>
+<status status="PASS" starttime="20220731 16:38:15.664" endtime="20220731 16:38:16.442"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:15.648" endtime="20220731 16:38:16.443"/>
+</kw>
+<kw name="Verify Apply Leave Menu" library="dashboard.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Apply</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:16.466" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Apply'.</msg>
+<status status="PASS" starttime="20220731 16:38:16.443" endtime="20220731 16:38:16.466"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Apply Leave</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:16.478" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Apply Leave'.</msg>
+<status status="PASS" starttime="20220731 16:38:16.467" endtime="20220731 16:38:16.478"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:16.443" endtime="20220731 16:38:16.479"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:15.015" endtime="20220731 16:38:16.479"/>
+</test>
+<test id="s1-s2-t5" name="Admin want to go to My Leave menu from Dashboard Quick Launch List" line="33">
+<kw name="Click Dashboard Menu" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:16.480" endtime="20220731 16:38:16.489"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:16.490" level="INFO">Clicking element 'id:menu_dashboard_index'.</msg>
+<status status="PASS" starttime="20220731 16:38:16.489" endtime="20220731 16:38:17.081"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:16.480" endtime="20220731 16:38:17.081"/>
+</kw>
+<kw name="Click My Leave Icon" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${myLeave}]/img</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:17.082" endtime="20220731 16:38:17.107"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${myLeave}]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:17.107" level="INFO">Clicking element 'xpath=//a[@href="/index.php/leave/viewMyLeaveList"]/img'.</msg>
+<status status="PASS" starttime="20220731 16:38:17.107" endtime="20220731 16:38:17.697"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:17.082" endtime="20220731 16:38:17.698"/>
+</kw>
+<kw name="Verify My Leave Menu" library="dashboard.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>My Leave</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:17.723" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'My Leave'.</msg>
+<status status="PASS" starttime="20220731 16:38:17.698" endtime="20220731 16:38:17.723"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>My Leave</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:17.734" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'My Leave'.</msg>
+<status status="PASS" starttime="20220731 16:38:17.723" endtime="20220731 16:38:17.734"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:17.698" endtime="20220731 16:38:17.734"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:16.479" endtime="20220731 16:38:17.734"/>
+</test>
+<test id="s1-s2-t6" name="Admin want to go to My Timesheets menu from Dashboard Quick Launch List" line="39">
+<kw name="Click Dashboard Menu" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:17.735" endtime="20220731 16:38:17.744"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_dashboard_index</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:17.744" level="INFO">Clicking element 'id:menu_dashboard_index'.</msg>
+<status status="PASS" starttime="20220731 16:38:17.744" endtime="20220731 16:38:18.310"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:17.735" endtime="20220731 16:38:18.310"/>
+</kw>
+<kw name="Click My Timesheets Icon" library="dashboard.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${myTimesheet}]/img</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:38:18.311" endtime="20220731 16:38:18.326"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[@href=${myTimesheet}]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:18.326" level="INFO">Clicking element 'xpath=//a[@href="/index.php/time/viewMyTimesheet"]/img'.</msg>
+<status status="PASS" starttime="20220731 16:38:18.326" endtime="20220731 16:38:19.306"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:18.311" endtime="20220731 16:38:19.306"/>
+</kw>
+<kw name="Verify My Timesheets Menu" library="dashboard.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Timesheets</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:19.322" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Timesheets'.</msg>
+<status status="PASS" starttime="20220731 16:38:19.307" endtime="20220731 16:38:19.322"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="top"]/h3</arg>
+<arg>Timesheet for Week</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:19.335" level="INFO">Element 'xpath=//div[@class="top"]/h3' contains text 'Timesheet for Week'.</msg>
+<status status="PASS" starttime="20220731 16:38:19.322" endtime="20220731 16:38:19.335"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:19.306" endtime="20220731 16:38:19.335"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:17.735" endtime="20220731 16:38:19.335"/>
+</test>
+<kw name="Close Browser" library="login.resource" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220731 16:38:19.336" endtime="20220731 16:38:19.392"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:19.336" endtime="20220731 16:38:19.392"/>
+</kw>
+<doc>In Dashboard Menu, Admin want to check all menu in Dashboard Quick Launch List</doc>
+<status status="PASS" starttime="20220731 16:37:56.438" endtime="20220731 16:38:19.392"/>
+</suite>
+<suite id="s1-s3" name="Leave.Test" source="/home/ferdian/Documents/My Github Project/robot-framework-project/test/leave.test.robot">
+<kw name="Login to OrangeHRM Website" library="login.resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LoginUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 16:38:19.400" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20220731 16:38:19.400" endtime="20220731 16:38:25.982"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtUsername</arg>
+<arg>${userLogin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:25.983" level="INFO">Typing text 'Admin' into text field 'id:txtUsername'.</msg>
+<status status="PASS" starttime="20220731 16:38:25.982" endtime="20220731 16:38:26.061"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtPassword</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:26.061" level="INFO">Typing text 'admin123' into text field 'id:txtPassword'.</msg>
+<status status="PASS" starttime="20220731 16:38:26.061" endtime="20220731 16:38:26.102"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:26.103" level="INFO">Clicking element 'id:btnLogin'.</msg>
+<status status="PASS" starttime="20220731 16:38:26.102" endtime="20220731 16:38:31.605"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:19.399" endtime="20220731 16:38:31.605"/>
+</kw>
+<test id="s1-s3-t1" name="Admin Successfully Go to Leave Menu" line="8">
+<kw name="Click Leave Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_viewLeaveModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:31.606" level="INFO">Clicking element 'id:menu_leave_viewLeaveModule'.</msg>
+<status status="PASS" starttime="20220731 16:38:31.606" endtime="20220731 16:38:34.142"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:31.605" endtime="20220731 16:38:34.142"/>
+</kw>
+<kw name="Verify Leave Menu Open" library="leave.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Leave List</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:34.160" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Leave List'.</msg>
+<status status="PASS" starttime="20220731 16:38:34.143" endtime="20220731 16:38:34.161"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Leave List</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:34.174" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Leave List'.</msg>
+<status status="PASS" starttime="20220731 16:38:34.161" endtime="20220731 16:38:34.174"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:34.142" endtime="20220731 16:38:34.174"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:31.605" endtime="20220731 16:38:34.174"/>
+</test>
+<test id="s1-s3-t2" name="Admin Successfully Go to Leave Period Menu" line="13">
+<kw name="Click Leave Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_viewLeaveModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:34.175" level="INFO">Clicking element 'id:menu_leave_viewLeaveModule'.</msg>
+<status status="PASS" starttime="20220731 16:38:34.175" endtime="20220731 16:38:35.553"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:34.175" endtime="20220731 16:38:35.553"/>
+</kw>
+<kw name="Click Configure Sub Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_Configure</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:35.554" level="INFO">Clicking element 'id:menu_leave_Configure'.</msg>
+<status status="PASS" starttime="20220731 16:38:35.554" endtime="20220731 16:38:35.589"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:35.553" endtime="20220731 16:38:35.589"/>
+</kw>
+<kw name="Click Leave Period Sub Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_defineLeavePeriod</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:35.589" level="INFO">Clicking element 'id:menu_leave_defineLeavePeriod'.</msg>
+<status status="PASS" starttime="20220731 16:38:35.589" endtime="20220731 16:38:36.430"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:35.589" endtime="20220731 16:38:36.430"/>
+</kw>
+<kw name="Verify Leave Period Sub Menu Open" library="leave.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Configure</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:36.450" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Configure'.</msg>
+<status status="PASS" starttime="20220731 16:38:36.430" endtime="20220731 16:38:36.450"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Leave Period</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:36.463" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Leave Period'.</msg>
+<status status="PASS" starttime="20220731 16:38:36.450" endtime="20220731 16:38:36.463"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:36.430" endtime="20220731 16:38:36.463"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:34.174" endtime="20220731 16:38:36.463"/>
+</test>
+<test id="s1-s3-t3" name="Admin Successfully Go To Holidays Menu" line="20">
+<kw name="Click Leave Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_viewLeaveModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:36.464" level="INFO">Clicking element 'id:menu_leave_viewLeaveModule'.</msg>
+<status status="PASS" starttime="20220731 16:38:36.464" endtime="20220731 16:38:37.815"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:36.464" endtime="20220731 16:38:37.815"/>
+</kw>
+<kw name="Click Configure Sub Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_Configure</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:37.816" level="INFO">Clicking element 'id:menu_leave_Configure'.</msg>
+<status status="PASS" starttime="20220731 16:38:37.816" endtime="20220731 16:38:37.848"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:37.815" endtime="20220731 16:38:37.848"/>
+</kw>
+<kw name="Click Holidays Sub Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_viewHolidayList</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:37.849" level="INFO">Clicking element 'id:menu_leave_viewHolidayList'.</msg>
+<status status="PASS" starttime="20220731 16:38:37.849" endtime="20220731 16:38:38.751"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:37.848" endtime="20220731 16:38:38.751"/>
+</kw>
+<kw name="Verify Holidays Sub Menu Open" library="leave.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Configure</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:38.776" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Configure'.</msg>
+<status status="PASS" starttime="20220731 16:38:38.752" endtime="20220731 16:38:38.776"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Holidays</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:38.791" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Holidays'.</msg>
+<status status="PASS" starttime="20220731 16:38:38.776" endtime="20220731 16:38:38.791"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:38.752" endtime="20220731 16:38:38.792"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:36.463" endtime="20220731 16:38:38.792"/>
+</test>
+<test id="s1-s3-t4" name="Admin Search All Leave Data" line="27">
+<kw name="Click Leave Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_viewLeaveModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:38.793" level="INFO">Clicking element 'id:menu_leave_viewLeaveModule'.</msg>
+<status status="PASS" starttime="20220731 16:38:38.793" endtime="20220731 16:38:40.178"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:38.792" endtime="20220731 16:38:40.179"/>
+</kw>
+<kw name="Choose From Date" library="leave.resource">
+<arg>${fromDate}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:calFromDate</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:40.180" level="INFO">Typing text '2021-01-01' into text field 'id:calFromDate'.</msg>
+<status status="PASS" starttime="20220731 16:38:40.180" endtime="20220731 16:38:40.268"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:calFromDate</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:38:40.269" level="INFO">Sending key(s) ('RETURN',) to id:calFromDate element.</msg>
+<msg timestamp="20220731 16:38:40.554" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:38:40.554" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:38:40.269" endtime="20220731 16:38:40.558"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:38:42.059" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:38:40.559" endtime="20220731 16:38:42.059"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:40.179" endtime="20220731 16:38:42.059"/>
+</kw>
+<kw name="Choose To Date" library="leave.resource">
+<arg>${toDate}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:calToDate</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:42.061" level="INFO">Typing text '2022-01-01' into text field 'id:calToDate'.</msg>
+<status status="PASS" starttime="20220731 16:38:42.060" endtime="20220731 16:38:42.137"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:calToDate</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:38:42.138" level="INFO">Sending key(s) ('RETURN',) to id:calToDate element.</msg>
+<msg timestamp="20220731 16:38:42.408" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:38:42.408" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:38:42.137" endtime="20220731 16:38:42.418"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:38:43.918" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:38:42.418" endtime="20220731 16:38:43.919"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:42.060" endtime="20220731 16:38:43.919"/>
+</kw>
+<kw name="Checklist All Checkbox Menu" library="leave.resource">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:leaveList_chkSearchFilter_checkboxgroup_allcheck</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:43.920" level="INFO">Selecting checkbox 'id:leaveList_chkSearchFilter_checkboxgroup_allcheck'.</msg>
+<status status="PASS" starttime="20220731 16:38:43.920" endtime="20220731 16:38:43.978"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:38:45.479" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:38:43.978" endtime="20220731 16:38:45.479"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:43.919" endtime="20220731 16:38:45.479"/>
+</kw>
+<kw name="Click Search Leave Button" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnSearch</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:45.480" level="INFO">Clicking element 'id:btnSearch'.</msg>
+<status status="PASS" starttime="20220731 16:38:45.480" endtime="20220731 16:38:46.485"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:45.479" endtime="20220731 16:38:46.485"/>
+</kw>
+<kw name="Verify Search Found" library="leave.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://td[@class="left"][1]</arg>
+<arg>2021</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:46.513" level="INFO">Element 'xpath://td[@class="left"][1]' contains text '2021'.</msg>
+<status status="PASS" starttime="20220731 16:38:46.486" endtime="20220731 16:38:46.513"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:46.485" endtime="20220731 16:38:46.514"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:38:38.792" endtime="20220731 16:38:46.514"/>
+</test>
+<test id="s1-s3-t5" name="Admin Search Data Not Found" line="36">
+<kw name="Click Leave Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_viewLeaveModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:46.515" level="INFO">Clicking element 'id:menu_leave_viewLeaveModule'.</msg>
+<status status="PASS" starttime="20220731 16:38:46.515" endtime="20220731 16:38:47.915"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:46.514" endtime="20220731 16:38:47.915"/>
+</kw>
+<kw name="Choose From Date" library="leave.resource">
+<arg>${fromDate}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:calFromDate</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:47.915" level="INFO">Typing text '2021-01-01' into text field 'id:calFromDate'.</msg>
+<status status="PASS" starttime="20220731 16:38:47.915" endtime="20220731 16:38:47.998"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:calFromDate</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:38:47.998" level="INFO">Sending key(s) ('RETURN',) to id:calFromDate element.</msg>
+<msg timestamp="20220731 16:38:48.269" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:38:48.269" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:38:47.998" endtime="20220731 16:38:48.280"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:38:49.780" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:38:48.280" endtime="20220731 16:38:49.781"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:47.915" endtime="20220731 16:38:49.781"/>
+</kw>
+<kw name="Choose To Date" library="leave.resource">
+<arg>${toDate}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:calToDate</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:49.782" level="INFO">Typing text '2022-01-01' into text field 'id:calToDate'.</msg>
+<status status="PASS" starttime="20220731 16:38:49.782" endtime="20220731 16:38:49.845"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:calToDate</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:38:49.846" level="INFO">Sending key(s) ('RETURN',) to id:calToDate element.</msg>
+<msg timestamp="20220731 16:38:50.114" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:38:50.114" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:38:49.846" endtime="20220731 16:38:50.125"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:38:51.626" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:38:50.126" endtime="20220731 16:38:51.626"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:49.781" endtime="20220731 16:38:51.627"/>
+</kw>
+<kw name="Checklist All Checkbox Menu" library="leave.resource">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:leaveList_chkSearchFilter_checkboxgroup_allcheck</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:51.628" level="INFO">Selecting checkbox 'id:leaveList_chkSearchFilter_checkboxgroup_allcheck'.</msg>
+<status status="PASS" starttime="20220731 16:38:51.628" endtime="20220731 16:38:51.652"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:38:53.152" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:38:51.652" endtime="20220731 16:38:53.152"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:51.627" endtime="20220731 16:38:53.153"/>
+</kw>
+<kw name="Choose Sub Unit" library="leave.resource">
+<arg>${subUnit}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:leaveList_cmbSubunit</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:53.154" level="INFO">Clicking element 'id:leaveList_cmbSubunit'.</msg>
+<status status="PASS" starttime="20220731 16:38:53.154" endtime="20220731 16:38:53.205"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:leaveList_cmbSubunit</arg>
+<arg>${sub}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220731 16:38:53.205" level="INFO">Selecting options from selection list 'id:leaveList_cmbSubunit' by label Engineering.</msg>
+<status status="PASS" starttime="20220731 16:38:53.205" endtime="20220731 16:38:53.241"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:38:54.742" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:38:53.241" endtime="20220731 16:38:54.742"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:53.153" endtime="20220731 16:38:54.742"/>
+</kw>
+<kw name="Click Search Leave Button" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnSearch</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:54.743" level="INFO">Clicking element 'id:btnSearch'.</msg>
+<status status="PASS" starttime="20220731 16:38:54.743" endtime="20220731 16:38:55.898"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:54.742" endtime="20220731 16:38:55.898"/>
+</kw>
+<kw name="Verify Search Not Found" library="leave.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://tbody/tr/td</arg>
+<arg>${dataNotFound}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:38:55.925" level="INFO">Element 'xpath://tbody/tr/td' contains text 'No Records Found'.</msg>
+<status status="PASS" starttime="20220731 16:38:55.899" endtime="20220731 16:38:55.925"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:55.899" endtime="20220731 16:38:55.926"/>
+</kw>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:38:46.514" endtime="20220731 16:38:55.926"/>
+</test>
+<test id="s1-s3-t6" name="Admin Input Invalid Format Date" line="46">
+<kw name="Click Leave Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_viewLeaveModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:38:55.927" level="INFO">Clicking element 'id:menu_leave_viewLeaveModule'.</msg>
+<status status="PASS" starttime="20220731 16:38:55.927" endtime="20220731 16:39:01.334"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:55.927" endtime="20220731 16:39:01.334"/>
+</kw>
+<kw name="Choose From Date" library="leave.resource">
+<arg>${invalidDate}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:calFromDate</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:01.335" level="INFO">Typing text '01-01-2021' into text field 'id:calFromDate'.</msg>
+<status status="PASS" starttime="20220731 16:39:01.334" endtime="20220731 16:39:01.408"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:calFromDate</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:39:01.409" level="INFO">Sending key(s) ('RETURN',) to id:calFromDate element.</msg>
+<msg timestamp="20220731 16:39:01.693" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:39:01.693" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:39:01.408" endtime="20220731 16:39:01.703"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:39:03.203" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:39:01.703" endtime="20220731 16:39:03.204"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:01.334" endtime="20220731 16:39:03.204"/>
+</kw>
+<kw name="Choose To Date" library="leave.resource">
+<arg>${invalidDate}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:calToDate</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:03.205" level="INFO">Typing text '01-01-2021' into text field 'id:calToDate'.</msg>
+<status status="PASS" starttime="20220731 16:39:03.205" endtime="20220731 16:39:03.268"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:calToDate</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:39:03.268" level="INFO">Sending key(s) ('RETURN',) to id:calToDate element.</msg>
+<msg timestamp="20220731 16:39:03.535" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:39:03.536" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:39:03.268" endtime="20220731 16:39:03.545"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:39:05.046" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:39:03.546" endtime="20220731 16:39:05.046"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:03.204" endtime="20220731 16:39:05.047"/>
+</kw>
+<kw name="Verify Invalid Format Date" library="leave.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://span[@for="calFromDate"]</arg>
+<arg>${msgInvalidDate}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:05.075" level="INFO">Element 'xpath://span[@for="calFromDate"]' contains text 'Should be a valid date in yyyy-mm-dd format'.</msg>
+<status status="PASS" starttime="20220731 16:39:05.047" endtime="20220731 16:39:05.075"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://span[@for="calToDate"]</arg>
+<arg>${msgInvalidDate}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:05.089" level="INFO">Element 'xpath://span[@for="calToDate"]' contains text 'Should be a valid date in yyyy-mm-dd format'.</msg>
+<status status="PASS" starttime="20220731 16:39:05.075" endtime="20220731 16:39:05.089"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:05.047" endtime="20220731 16:39:05.089"/>
+</kw>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:38:55.926" endtime="20220731 16:39:05.089"/>
+</test>
+<test id="s1-s3-t7" name="Admin Input From Date Bigger Than To Date" line="53">
+<kw name="Click Leave Menu" library="leave.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_leave_viewLeaveModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:05.090" level="INFO">Clicking element 'id:menu_leave_viewLeaveModule'.</msg>
+<status status="PASS" starttime="20220731 16:39:05.090" endtime="20220731 16:39:06.676"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:05.090" endtime="20220731 16:39:06.676"/>
+</kw>
+<kw name="Choose From Date" library="leave.resource">
+<arg>${toDate}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:calFromDate</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:06.677" level="INFO">Typing text '2022-01-01' into text field 'id:calFromDate'.</msg>
+<status status="PASS" starttime="20220731 16:39:06.676" endtime="20220731 16:39:06.753"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:calFromDate</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:39:06.753" level="INFO">Sending key(s) ('RETURN',) to id:calFromDate element.</msg>
+<msg timestamp="20220731 16:39:07.049" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:39:07.049" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:39:06.753" endtime="20220731 16:39:07.054"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:39:08.554" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:39:07.054" endtime="20220731 16:39:08.554"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:06.676" endtime="20220731 16:39:08.555"/>
+</kw>
+<kw name="Choose To Date" library="leave.resource">
+<arg>${fromDate}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:calToDate</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:08.556" level="INFO">Typing text '2021-01-01' into text field 'id:calToDate'.</msg>
+<status status="PASS" starttime="20220731 16:39:08.556" endtime="20220731 16:39:08.622"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:calToDate</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:39:08.622" level="INFO">Sending key(s) ('RETURN',) to id:calToDate element.</msg>
+<msg timestamp="20220731 16:39:08.901" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:39:08.901" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:39:08.622" endtime="20220731 16:39:08.912"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:39:10.413" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:39:08.912" endtime="20220731 16:39:10.413"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:08.555" endtime="20220731 16:39:10.413"/>
+</kw>
+<kw name="Verify Error To &lt; From Date" library="leave.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://span[@for="calToDate"]</arg>
+<arg>${msgErrToDate}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:10.434" level="INFO">Element 'xpath://span[@for="calToDate"]' contains text 'To date should be after from date'.</msg>
+<status status="PASS" starttime="20220731 16:39:10.414" endtime="20220731 16:39:10.434"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:10.413" endtime="20220731 16:39:10.434"/>
+</kw>
+<tag>Negative</tag>
+<status status="PASS" starttime="20220731 16:39:05.090" endtime="20220731 16:39:10.434"/>
+</test>
+<kw name="Close Browser" library="login.resource" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220731 16:39:10.435" endtime="20220731 16:39:10.491"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:10.435" endtime="20220731 16:39:10.491"/>
+</kw>
+<status status="PASS" starttime="20220731 16:38:19.393" endtime="20220731 16:39:10.492"/>
+</suite>
+<suite id="s1-s4" name="Login.Test" source="/home/ferdian/Documents/My Github Project/robot-framework-project/test/login.test.robot">
+<kw name="Admin go to OrangeHRM Website" library="login.resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LoginUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 16:39:10.496" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20220731 16:39:10.496" endtime="20220731 16:39:17.514"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:10.496" endtime="20220731 16:39:17.515"/>
+</kw>
+<test id="s1-s4-t1" name="Admin successfully Login to OrangeHRM Website" line="7">
+<kw name="Input Username" library="login.resource">
+<arg>${userLogin}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtUsername</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:17.518" level="INFO">Typing text 'Admin' into text field 'id:txtUsername'.</msg>
+<status status="PASS" starttime="20220731 16:39:17.517" endtime="20220731 16:39:17.565"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:17.517" endtime="20220731 16:39:17.565"/>
+</kw>
+<kw name="Input Password" library="login.resource">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtPassword</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:17.566" level="INFO">Typing text 'admin123' into text field 'id:txtPassword'.</msg>
+<status status="PASS" starttime="20220731 16:39:17.565" endtime="20220731 16:39:17.609"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:17.565" endtime="20220731 16:39:17.609"/>
+</kw>
+<kw name="Click Login Button" library="login.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:17.610" level="INFO">Clicking element 'id:btnLogin'.</msg>
+<status status="PASS" starttime="20220731 16:39:17.609" endtime="20220731 16:39:23.419"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:17.609" endtime="20220731 16:39:23.420"/>
+</kw>
+<kw name="Verify Admin Success Login" library="login.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:welcome</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 16:39:23.420" endtime="20220731 16:39:23.436"/>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>xpath=//img[@alt="OrangeHRM"]</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220731 16:39:23.446" level="INFO">Current page contains image 'xpath=//img[@alt="OrangeHRM"]'.</msg>
+<status status="PASS" starttime="20220731 16:39:23.437" endtime="20220731 16:39:23.446"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:23.420" endtime="20220731 16:39:23.446"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:39:17.515" endtime="20220731 16:39:23.447"/>
+</test>
+<kw name="Close Browser" library="login.resource" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220731 16:39:23.448" endtime="20220731 16:39:23.504"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:23.447" endtime="20220731 16:39:23.504"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:10.493" endtime="20220731 16:39:23.504"/>
+</suite>
+<suite id="s1-s5" name="Pim.Test" source="/home/ferdian/Documents/My Github Project/robot-framework-project/test/pim.test.robot">
+<kw name="Login to OrangeHRM Website" library="login.resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LoginUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 16:39:23.510" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20220731 16:39:23.510" endtime="20220731 16:39:30.727"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtUsername</arg>
+<arg>${userLogin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:30.729" level="INFO">Typing text 'Admin' into text field 'id:txtUsername'.</msg>
+<status status="PASS" starttime="20220731 16:39:30.728" endtime="20220731 16:39:30.780"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtPassword</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:30.781" level="INFO">Typing text 'admin123' into text field 'id:txtPassword'.</msg>
+<status status="PASS" starttime="20220731 16:39:30.780" endtime="20220731 16:39:30.823"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:30.823" level="INFO">Clicking element 'id:btnLogin'.</msg>
+<status status="PASS" starttime="20220731 16:39:30.823" endtime="20220731 16:39:36.419"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:23.509" endtime="20220731 16:39:36.419"/>
+</kw>
+<test id="s1-s5-t1" name="Admin Successfully Go to Admin Menu" line="8">
+<kw name="Click PIM Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_pim_viewPimModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:36.420" level="INFO">Clicking element 'id:menu_pim_viewPimModule'.</msg>
+<status status="PASS" starttime="20220731 16:39:36.420" endtime="20220731 16:39:40.756"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:36.420" endtime="20220731 16:39:40.757"/>
+</kw>
+<kw name="Verify PIM Menu Open" library="pim.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Employee List</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:40.774" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Employee List'.</msg>
+<status status="PASS" starttime="20220731 16:39:40.757" endtime="20220731 16:39:40.774"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Employee Information</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:40.789" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Employee Information'.</msg>
+<status status="PASS" starttime="20220731 16:39:40.775" endtime="20220731 16:39:40.789"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:40.757" endtime="20220731 16:39:40.789"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:39:36.419" endtime="20220731 16:39:40.789"/>
+</test>
+<test id="s1-s5-t2" name="Admin Successfully Go to Add Employee Menu" line="13">
+<kw name="Click PIM Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_pim_viewPimModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:40.791" level="INFO">Clicking element 'id:menu_pim_viewPimModule'.</msg>
+<status status="PASS" starttime="20220731 16:39:40.790" endtime="20220731 16:39:42.913"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:40.790" endtime="20220731 16:39:42.913"/>
+</kw>
+<kw name="Click Add Employee Sub Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_pim_addEmployee</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:42.914" level="INFO">Clicking element 'id:menu_pim_addEmployee'.</msg>
+<status status="PASS" starttime="20220731 16:39:42.913" endtime="20220731 16:39:44.893"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:42.913" endtime="20220731 16:39:44.893"/>
+</kw>
+<kw name="Verify Add Employee Sub Menu Open" library="pim.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Employee List</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:44.918" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Employee List'.</msg>
+<status status="PASS" starttime="20220731 16:39:44.894" endtime="20220731 16:39:44.918"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Add Employee</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:44.933" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Add Employee'.</msg>
+<status status="PASS" starttime="20220731 16:39:44.918" endtime="20220731 16:39:44.933"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:44.893" endtime="20220731 16:39:44.933"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:39:40.790" endtime="20220731 16:39:44.933"/>
+</test>
+<test id="s1-s5-t3" name="Admin Successfully Go to Report Menu" line="19">
+<kw name="Click PIM Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_pim_viewPimModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:44.934" level="INFO">Clicking element 'id:menu_pim_viewPimModule'.</msg>
+<status status="PASS" starttime="20220731 16:39:44.934" endtime="20220731 16:39:46.086"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:44.934" endtime="20220731 16:39:46.086"/>
+</kw>
+<kw name="Click Reports Sub Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_core_viewDefinedPredefinedReports</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:46.087" level="INFO">Clicking element 'id:menu_core_viewDefinedPredefinedReports'.</msg>
+<status status="PASS" starttime="20220731 16:39:46.086" endtime="20220731 16:39:46.888"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:46.086" endtime="20220731 16:39:46.888"/>
+</kw>
+<kw name="Verify Report Sub Menu Open" library="pim.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Reports</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:46.904" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Reports'.</msg>
+<status status="PASS" starttime="20220731 16:39:46.889" endtime="20220731 16:39:46.904"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Employee Reports</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:46.922" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Employee Reports'.</msg>
+<status status="PASS" starttime="20220731 16:39:46.904" endtime="20220731 16:39:46.922"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:46.889" endtime="20220731 16:39:46.922"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:39:44.933" endtime="20220731 16:39:46.922"/>
+</test>
+<test id="s1-s5-t4" name="Admin Successfully Search Report" line="25">
+<kw name="Click PIM Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_pim_viewPimModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:46.923" level="INFO">Clicking element 'id:menu_pim_viewPimModule'.</msg>
+<status status="PASS" starttime="20220731 16:39:46.923" endtime="20220731 16:39:48.133"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:46.923" endtime="20220731 16:39:48.134"/>
+</kw>
+<kw name="Click Reports Sub Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_core_viewDefinedPredefinedReports</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:48.134" level="INFO">Clicking element 'id:menu_core_viewDefinedPredefinedReports'.</msg>
+<status status="PASS" starttime="20220731 16:39:48.134" endtime="20220731 16:39:48.723"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:48.134" endtime="20220731 16:39:48.724"/>
+</kw>
+<kw name="Input Search Report" library="pim.resource">
+<arg>${reportName}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:search_search</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:48.725" level="INFO">Typing text 'PIM Sample Report' into text field 'id:search_search'.</msg>
+<status status="PASS" starttime="20220731 16:39:48.724" endtime="20220731 16:39:48.773"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:39:50.273" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:39:48.773" endtime="20220731 16:39:50.273"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:48.724" endtime="20220731 16:39:50.274"/>
+</kw>
+<kw name="Click Search Report Button" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@class="searchBtn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:50.274" level="INFO">Clicking element 'xpath=//input[@class="searchBtn"]'.</msg>
+<status status="PASS" starttime="20220731 16:39:50.274" endtime="20220731 16:39:50.805"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:50.274" endtime="20220731 16:39:50.805"/>
+</kw>
+<kw name="Verify Search Found" library="pim.resource">
+<arg>${reportName}</arg>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://td[@class="left"][1]</arg>
+<arg>${search}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:50.822" level="INFO">Element 'xpath://td[@class="left"][1]' contains text 'PIM Sample Report'.</msg>
+<status status="PASS" starttime="20220731 16:39:50.805" endtime="20220731 16:39:50.822"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:50.805" endtime="20220731 16:39:50.822"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:39:46.923" endtime="20220731 16:39:50.822"/>
+</test>
+<test id="s1-s5-t5" name="Admin Successfully Open Report" line="33">
+<kw name="Click PIM Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_pim_viewPimModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:50.823" level="INFO">Clicking element 'id:menu_pim_viewPimModule'.</msg>
+<status status="PASS" starttime="20220731 16:39:50.823" endtime="20220731 16:39:52.024"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:50.823" endtime="20220731 16:39:52.024"/>
+</kw>
+<kw name="Click Reports Sub Menu" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_core_viewDefinedPredefinedReports</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:52.024" level="INFO">Clicking element 'id:menu_core_viewDefinedPredefinedReports'.</msg>
+<status status="PASS" starttime="20220731 16:39:52.024" endtime="20220731 16:39:52.932"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:52.024" endtime="20220731 16:39:52.932"/>
+</kw>
+<kw name="Input Search Report" library="pim.resource">
+<arg>${reportName}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:search_search</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:52.933" level="INFO">Typing text 'PIM Sample Report' into text field 'id:search_search'.</msg>
+<status status="PASS" starttime="20220731 16:39:52.933" endtime="20220731 16:39:52.982"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:39:54.483" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:39:52.982" endtime="20220731 16:39:54.483"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:52.932" endtime="20220731 16:39:54.483"/>
+</kw>
+<kw name="Click Search Report Button" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@class="searchBtn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:54.484" level="INFO">Clicking element 'xpath=//input[@class="searchBtn"]'.</msg>
+<status status="PASS" starttime="20220731 16:39:54.484" endtime="20220731 16:39:55.269"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:54.483" endtime="20220731 16:39:55.269"/>
+</kw>
+<kw name="Click Run" library="pim.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[contains(text(),"Run")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:39:55.270" level="INFO">Clicking element 'xpath=//a[contains(text(),"Run")]'.</msg>
+<status status="PASS" starttime="20220731 16:39:55.270" endtime="20220731 16:39:57.362"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:55.270" endtime="20220731 16:39:57.362"/>
+</kw>
+<kw name="Verify Report Detail Open" library="pim.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Report Name</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:39:57.386" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Report Name'.</msg>
+<status status="PASS" starttime="20220731 16:39:57.363" endtime="20220731 16:39:57.386"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>id:frmList_ohrmListComponent</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220731 16:39:57.386" endtime="20220731 16:39:57.403"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:57.363" endtime="20220731 16:39:57.403"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:39:50.822" endtime="20220731 16:39:57.403"/>
+</test>
+<kw name="Close Browser" library="login.resource" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220731 16:39:57.404" endtime="20220731 16:39:57.461"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:57.403" endtime="20220731 16:39:57.462"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:23.505" endtime="20220731 16:39:57.462"/>
+</suite>
+<suite id="s1-s6" name="Time.Test" source="/home/ferdian/Documents/My Github Project/robot-framework-project/test/time.test.robot">
+<kw name="Login to OrangeHRM Website" library="login.resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LoginUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 16:39:57.512" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20220731 16:39:57.512" endtime="20220731 16:40:04.414"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtUsername</arg>
+<arg>${userLogin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:04.416" level="INFO">Typing text 'Admin' into text field 'id:txtUsername'.</msg>
+<status status="PASS" starttime="20220731 16:40:04.415" endtime="20220731 16:40:04.461"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:txtPassword</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:04.461" level="INFO">Typing text 'admin123' into text field 'id:txtPassword'.</msg>
+<status status="PASS" starttime="20220731 16:40:04.461" endtime="20220731 16:40:04.503"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:04.503" level="INFO">Clicking element 'id:btnLogin'.</msg>
+<status status="PASS" starttime="20220731 16:40:04.503" endtime="20220731 16:40:09.599"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:57.512" endtime="20220731 16:40:09.600"/>
+</kw>
+<test id="s1-s6-t1" name="Admin Successfully Go to Time Menu" line="8">
+<kw name="Click Time Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_time_viewTimeModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:09.601" level="INFO">Clicking element 'id:menu_time_viewTimeModule'.</msg>
+<status status="PASS" starttime="20220731 16:40:09.601" endtime="20220731 16:40:10.910"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:09.600" endtime="20220731 16:40:10.911"/>
+</kw>
+<kw name="Verify Time Menu Open" library="time.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Timesheets</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:10.930" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Timesheets'.</msg>
+<status status="PASS" starttime="20220731 16:40:10.912" endtime="20220731 16:40:10.930"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Select Employee</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:10.943" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Select Employee'.</msg>
+<status status="PASS" starttime="20220731 16:40:10.930" endtime="20220731 16:40:10.943"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:10.911" endtime="20220731 16:40:10.943"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:40:09.600" endtime="20220731 16:40:10.943"/>
+</test>
+<test id="s1-s6-t2" name="Admin Want to Select Employee Timesheets" line="13">
+<kw name="Click Time Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_time_viewTimeModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:10.945" level="INFO">Clicking element 'id:menu_time_viewTimeModule'.</msg>
+<status status="PASS" starttime="20220731 16:40:10.944" endtime="20220731 16:40:11.734"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:10.944" endtime="20220731 16:40:11.734"/>
+</kw>
+<kw name="Input Employee Name Timesheet" library="time.resource">
+<arg>${EmployeeName}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:employee</arg>
+<arg>${emp}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:11.735" level="INFO">Typing text 'Charlie Carter' into text field 'id:employee'.</msg>
+<status status="PASS" starttime="20220731 16:40:11.734" endtime="20220731 16:40:11.796"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id:employee</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220731 16:40:11.796" level="INFO">Sending key(s) ('RETURN',) to id:employee element.</msg>
+<msg timestamp="20220731 16:40:12.072" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220731 16:40:12.072" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220731 16:40:11.796" endtime="20220731 16:40:12.084"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 16:40:13.584" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20220731 16:40:12.084" endtime="20220731 16:40:13.584"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:11.734" endtime="20220731 16:40:13.585"/>
+</kw>
+<kw name="Click View Button" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:btnView</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:13.586" level="INFO">Clicking element 'id:btnView'.</msg>
+<status status="PASS" starttime="20220731 16:40:13.585" endtime="20220731 16:40:15.229"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:13.585" endtime="20220731 16:40:15.229"/>
+</kw>
+<kw name="Verify Selected Employee Timesheets Viewed" library="time.resource">
+<arg>${EmployeeName}</arg>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="top"]/h3</arg>
+<arg>${emp}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:15.246" level="INFO">Element 'xpath=//div[@class="top"]/h3' contains text 'Charlie Carter'.</msg>
+<status status="PASS" starttime="20220731 16:40:15.230" endtime="20220731 16:40:15.246"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:15.229" endtime="20220731 16:40:15.246"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:40:10.944" endtime="20220731 16:40:15.246"/>
+</test>
+<test id="s1-s6-t3" name="Admin Successfully Open Project Reports Menu" line="20">
+<kw name="Click Time Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_time_viewTimeModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:15.247" level="INFO">Clicking element 'id:menu_time_viewTimeModule'.</msg>
+<status status="PASS" starttime="20220731 16:40:15.247" endtime="20220731 16:40:16.067"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:15.247" endtime="20220731 16:40:16.067"/>
+</kw>
+<kw name="Click Reports Sub Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_time_Reports</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:16.068" level="INFO">Clicking element 'id:menu_time_Reports'.</msg>
+<status status="PASS" starttime="20220731 16:40:16.067" endtime="20220731 16:40:16.111"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:16.067" endtime="20220731 16:40:16.111"/>
+</kw>
+<kw name="Click Project Reports Sub Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_time_displayProjectReportCriteria</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:16.112" level="INFO">Clicking element 'id:menu_time_displayProjectReportCriteria'.</msg>
+<status status="PASS" starttime="20220731 16:40:16.112" endtime="20220731 16:40:16.582"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:16.111" endtime="20220731 16:40:16.582"/>
+</kw>
+<kw name="Verify Project Reports Menu Open" library="time.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Reports</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:16.609" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Reports'.</msg>
+<status status="PASS" starttime="20220731 16:40:16.582" endtime="20220731 16:40:16.609"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Project Report</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:16.623" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Project Report'.</msg>
+<status status="PASS" starttime="20220731 16:40:16.609" endtime="20220731 16:40:16.624"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:16.582" endtime="20220731 16:40:16.624"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:40:15.247" endtime="20220731 16:40:16.624"/>
+</test>
+<test id="s1-s6-t4" name="Admin Successfully Open My Records Menu" line="27">
+<kw name="Click Time Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_time_viewTimeModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:16.625" level="INFO">Clicking element 'id:menu_time_viewTimeModule'.</msg>
+<status status="PASS" starttime="20220731 16:40:16.625" endtime="20220731 16:40:17.368"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:16.625" endtime="20220731 16:40:17.369"/>
+</kw>
+<kw name="Click Attendance Sub Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_attendance_Attendance</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:17.369" level="INFO">Clicking element 'id:menu_attendance_Attendance'.</msg>
+<status status="PASS" starttime="20220731 16:40:17.369" endtime="20220731 16:40:17.412"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:17.369" endtime="20220731 16:40:17.412"/>
+</kw>
+<kw name="Click My Records Sub Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_attendance_viewMyAttendanceRecord</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:17.413" level="INFO">Clicking element 'id:menu_attendance_viewMyAttendanceRecord'.</msg>
+<status status="PASS" starttime="20220731 16:40:17.412" endtime="20220731 16:40:18.187"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:17.412" endtime="20220731 16:40:18.187"/>
+</kw>
+<kw name="Verify My Records Menu Open" library="time.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Attendance</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:18.203" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Attendance'.</msg>
+<status status="PASS" starttime="20220731 16:40:18.188" endtime="20220731 16:40:18.203"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>My Attendance Records</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:18.214" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'My Attendance Records'.</msg>
+<status status="PASS" starttime="20220731 16:40:18.203" endtime="20220731 16:40:18.214"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:18.188" endtime="20220731 16:40:18.214"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:40:16.624" endtime="20220731 16:40:18.214"/>
+</test>
+<test id="s1-s6-t5" name="Admin Successfully Open Customer Project Info" line="34">
+<kw name="Click Time Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_time_viewTimeModule</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:18.215" level="INFO">Clicking element 'id:menu_time_viewTimeModule'.</msg>
+<status status="PASS" starttime="20220731 16:40:18.215" endtime="20220731 16:40:20.281"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:18.215" endtime="20220731 16:40:20.281"/>
+</kw>
+<kw name="Click Project Info Sub Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_ProjectInfo</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:20.282" level="INFO">Clicking element 'id:menu_admin_ProjectInfo'.</msg>
+<status status="PASS" starttime="20220731 16:40:20.282" endtime="20220731 16:40:20.323"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:20.282" endtime="20220731 16:40:20.323"/>
+</kw>
+<kw name="Click Customer Sub Menu" library="time.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:menu_admin_viewCustomers</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 16:40:20.324" level="INFO">Clicking element 'id:menu_admin_viewCustomers'.</msg>
+<status status="PASS" starttime="20220731 16:40:20.324" endtime="20220731 16:40:21.807"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:20.324" endtime="20220731 16:40:21.807"/>
+</kw>
+<kw name="Verify Customer Project Info Menu Open" library="time.resource">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//li[@class="selected"]/a</arg>
+<arg>Project Info</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:21.822" level="INFO">Element 'xpath=//li[@class="selected"]/a' contains text 'Project Info'.</msg>
+<status status="PASS" starttime="20220731 16:40:21.807" endtime="20220731 16:40:21.822"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//div[@class="head"]/h1</arg>
+<arg>Customers</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220731 16:40:21.832" level="INFO">Element 'xpath=//div[@class="head"]/h1' contains text 'Customers'.</msg>
+<status status="PASS" starttime="20220731 16:40:21.822" endtime="20220731 16:40:21.833"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:21.807" endtime="20220731 16:40:21.833"/>
+</kw>
+<tag>Positive</tag>
+<status status="PASS" starttime="20220731 16:40:18.215" endtime="20220731 16:40:21.833"/>
+</test>
+<kw name="Close Browser" library="login.resource" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220731 16:40:21.833" endtime="20220731 16:40:21.890"/>
+</kw>
+<status status="PASS" starttime="20220731 16:40:21.833" endtime="20220731 16:40:21.891"/>
+</kw>
+<status status="PASS" starttime="20220731 16:39:57.463" endtime="20220731 16:40:21.891"/>
+</suite>
+<status status="PASS" starttime="20220731 16:36:42.638" endtime="20220731 16:40:21.892"/>
+</suite>
+<statistics>
+<total>
+<stat pass="40" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="11" fail="0" skip="0">Create User</stat>
+<stat pass="13" fail="0" skip="0">Negative</stat>
+<stat pass="27" fail="0" skip="0">Positive</stat>
+<stat pass="5" fail="0" skip="0">Search User</stat>
+</tag>
+<suite>
+<stat pass="40" fail="0" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="16" fail="0" skip="0" id="s1-s1" name="Admin.Test">Test.Admin.Test</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s2" name="Dashboard.Test">Test.Dashboard.Test</stat>
+<stat pass="7" fail="0" skip="0" id="s1-s3" name="Leave.Test">Test.Leave.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="Login.Test">Test.Login.Test</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s5" name="Pim.Test">Test.Pim.Test</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s6" name="Time.Test">Test.Time.Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
