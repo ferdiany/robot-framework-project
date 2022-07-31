@@ -19,13 +19,15 @@ Click Login Button
 
 Verify Admin Success Login
     Wait Until Element Is Visible   id:welcome
-    Page Should Contain Image       xpath=//img[@alt="OrangeHRM"]
+    Page Should Contain Image       xpath://img[@alt="OrangeHRM"]
 
 Close Browser
     Close All Browsers
 
 Login to OrangeHRM Website
+    [Documentation]                 Jika Verifikasi Failed, Berarti Akun Admin sedang Bermasalah dan Tidak bisa Login
     Open Browser                    ${LoginUrl}                     ${Browser}
     Input Text                      id:txtUsername                  ${userLogin}
     Input Text                      id:txtPassword                  ${password}
     Click Element                   id:btnLogin
+    Page Should Contain Image       xpath://img[@alt="OrangeHRM"]

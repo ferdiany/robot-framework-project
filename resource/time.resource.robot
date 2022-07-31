@@ -1,5 +1,5 @@
 *** Settings ***
-Library     SeleniumLibrary     #run_on_failure=NOTHING
+Library     SeleniumLibrary     run_on_failure=NOTHING
 Resource    ../data/data.robot
 
 *** Keywords ***
@@ -34,21 +34,21 @@ Input Employee Name Timesheet
     sleep                       1.5s
 
 Verify Time Menu Open
-    Element Should Contain      xpath=//li[@class="selected"]/a          Timesheets
-    Element Should Contain      xpath=//div[@class="head"]/h1            Select Employee
+    Element Should Contain      xpath://li[@class="selected"]/a          Timesheets
+    Element Should Contain      xpath://div[@class="head"]/h1            Select Employee
 
 Verify Selected Employee Timesheets Viewed
     [Arguments]                 ${emp}
-    Element Should Contain      xpath=//div[@class="top"]/h3             ${emp}
+    Element Should Contain      xpath://div[@class="top"]/h3             ${emp}
 
 Verify Project Reports Menu Open
-    Element Should Contain      xpath=//li[@class="selected"]/a          Reports
-    Element Should Contain      xpath=//div[@class="head"]/h1            Project Report
+    Element Should Contain      xpath://li[@class="selected"]/a          Reports
+    Element Should Contain      xpath://div[@class="head"]/h1            Project Report
 
 Verify My Records Menu Open
-    Element Should Contain      xpath=//li[@class="selected"]/a          Attendance
-    Element Should Contain      xpath=//div[@class="head"]/h1            My Attendance Records
+    Element Should Contain      xpath://li[@class="selected"]/a          Attendance
+    Element Should Contain      xpath://div[@class="head"]/h1            My Attendance Records
 
 Verify Customer Project Info Menu Open
-    Element Should Contain      xpath=//li[@class="selected"]/a          Project Info
-    Element Should Contain      xpath=//div[@class="head"]/h1            Customers
+    Element Should Contain      xpath://li[@class="selected"]/a          Project Info
+    Element Should Contain      xpath://div[@class="head"]/h1            Customers

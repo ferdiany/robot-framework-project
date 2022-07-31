@@ -46,3 +46,15 @@ ${toDate}                   2022-01-01
 ${invalidDate}              01-01-2021
 ${msgInvalidDate}           Should be a valid date in yyyy-mm-dd format
 ${msgErrToDate}             To date should be after from date
+
+#Recruitment Menu
+${jobTitle}                 QA Lead
+${candidateVacancy}         Senior QA Lead
+${candidateFirstname}       Ronaldowati
+${candidateLastname}        Imut
+${candidateEmail}           ronaldowati@yopmail.com
+
+#Directory Menu
+${dirUsername}              Jordan Mathews
+${dirJobTitle}              Database Administrator
+${dirLocation}                  Canadian Regional HQ

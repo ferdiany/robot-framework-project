@@ -7,8 +7,8 @@ Click Admin Menu
     Click Element               id:menu_admin_viewAdminModule
 
 Verify Admin Menu Open
-    Element Should Contain      xpath=//li[@class="selected"]/a                     User Management
-    Element Should Contain      xpath=//div[@class="head"]/h1                       System Users
+    Element Should Contain      xpath://li[@class="selected"]/a                     User Management
+    Element Should Contain      xpath://div[@class="head"]/h1                       System Users
 
 Click Add Button
     Click Element               id:btnAdd
@@ -77,25 +77,25 @@ Click Search Button
     Click Element                   id:searchBtn
 
 Verify User Created
-    Element Should Contain      xpath=//div[@class="head"]/h1                       System Users
-    Element Should Contain      xpath=//li[@class="selected"]/a                     User Management
+    Element Should Contain      xpath://div[@class="head"]/h1                       System Users
+    Element Should Contain      xpath://li[@class="selected"]/a                     User Management
 
 Verify Blank Error
-    Element Should Contain  xpath=//span[@for='systemUser_employeeName_empName']    ${msgEmpNotFound}
-    Element Should Contain  xpath=//span[@for='systemUser_userName']                ${msgBlankError}
-    Element Should Contain  xpath=//span[@for='systemUser_password']                ${msgBlankError}
+    Element Should Contain  xpath://span[@for='systemUser_employeeName_empName']    ${msgEmpNotFound}
+    Element Should Contain  xpath://span[@for='systemUser_userName']                ${msgBlankError}
+    Element Should Contain  xpath://span[@for='systemUser_password']                ${msgBlankError}
 
 Verify Unlisted Employee Error
-    Element Should Contain  xpath=//span[@for='systemUser_employeeName_empName']    ${msgEmpNotFound}
+    Element Should Contain  xpath://span[@for='systemUser_employeeName_empName']    ${msgEmpNotFound}
 
 Verify Invalid Username Error
-    Element Should Contain  xpath=//span[@for='systemUser_userName']                ${msgInvalideUsername}
+    Element Should Contain  xpath://span[@for='systemUser_userName']                ${msgInvalideUsername}
 
 Verify Invalid Password Error
-    Element Should Contain  xpath=//span[@for='systemUser_password']                ${msgInvalidPassword}
+    Element Should Contain  xpath://span[@for='systemUser_password']                ${msgInvalidPassword}
 
 Verify Confirm Password Error
-    Element Should Contain  xpath=//span[@for='systemUser_confirmPassword']         ${msgConfirmPassword}
+    Element Should Contain  xpath://span[@for='systemUser_confirmPassword']         ${msgConfirmPassword}
 
 Verify Very Weak Password
     Element Should Contain  id:systemUser_password_strength_meter                   ${passVeryWeak}

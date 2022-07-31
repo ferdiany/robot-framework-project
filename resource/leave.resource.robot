@@ -41,16 +41,16 @@ Click Search Leave Button
     Click Element               id:btnSearch
 
 Verify Leave Menu Open
-    Element Should Contain      xpath=//li[@class="selected"]/a                     Leave List
-    Element Should Contain      xpath=//div[@class="head"]/h1                       Leave List
+    Element Should Contain      xpath://li[@class="selected"]/a                     Leave List
+    Element Should Contain      xpath://div[@class="head"]/h1                       Leave List
 
 Verify Leave Period Sub Menu Open
-    Element Should Contain      xpath=//li[@class="selected"]/a                     Configure
-    Element Should Contain      xpath=//div[@class="head"]/h1                       Leave Period
+    Element Should Contain      xpath://li[@class="selected"]/a                     Configure
+    Element Should Contain      xpath://div[@class="head"]/h1                       Leave Period
 
 Verify Holidays Sub Menu Open
-    Element Should Contain      xpath=//li[@class="selected"]/a                     Configure
-    Element Should Contain      xpath=//div[@class="head"]/h1                       Holidays
+    Element Should Contain      xpath://li[@class="selected"]/a                     Configure
+    Element Should Contain      xpath://div[@class="head"]/h1                       Holidays
 
 Verify Search Found
     Element Should Contain      xpath://td[@class="left"][1]                        2021
