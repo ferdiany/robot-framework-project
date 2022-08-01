@@ -57,4 +57,11 @@ ${candidateEmail}           ronaldowati@yopmail.com
 #Directory Menu
 ${dirUsername}              Jordan Mathews
 ${dirJobTitle}              Database Administrator
-${dirLocation}                  Canadian Regional HQ
+${dirLocation}              Canadian Regional HQ
+
+#My Info Menu
+${nationality}              Greek
+${bloodType}                O-
+
+#Buzz
+${status}                   Sanbercode Seru Banget Guyss

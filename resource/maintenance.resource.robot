@@ -4,7 +4,8 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click Maintenance Menu
-    Click Element               id:menu_maintenance_purgeEmployee
+    Wait Until Element Is Visible       id:menu_maintenance_purgeEmployee     30s
+    Click Element                       id:menu_maintenance_purgeEmployee
 
 Click Access Record Sub Menu
     Click Element               id:menu_maintenance_accessEmployeeData

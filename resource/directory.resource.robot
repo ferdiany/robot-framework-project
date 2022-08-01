@@ -4,7 +4,8 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click Directory Menu
-    Click Element               id:menu_directory_viewDirectory
+    Wait Until Element Is Visible       id:menu_directory_viewDirectory     30s
+    Click Element                       id:menu_directory_viewDirectory
 
 Input Directory Name
     [Arguments]                 ${name}

@@ -4,7 +4,8 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click Time Menu
-    Click Element               id:menu_time_viewTimeModule
+    Wait Until Element Is Visible       id:menu_time_viewTimeModule     30s
+    Click Element                       id:menu_time_viewTimeModule
 
 Click Attendance Sub Menu
     Click Element               id:menu_attendance_Attendance

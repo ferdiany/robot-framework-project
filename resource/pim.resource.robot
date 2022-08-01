@@ -4,7 +4,8 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click PIM Menu
-    Click Element               id:menu_pim_viewPimModule
+    Wait Until Element Is Visible       id:menu_pim_viewPimModule     30s
+    Click Element                       id:menu_pim_viewPimModule
 
 Click Add Employee Sub Menu
     Click Element               id:menu_pim_addEmployee

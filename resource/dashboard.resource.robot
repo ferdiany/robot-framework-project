@@ -4,7 +4,7 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click Dashboard Menu
-    Wait Until Element is Visible   id:menu_dashboard_index
+    Wait Until Element is Visible   id:menu_dashboard_index     30s
     Click Element                   id:menu_dashboard_index
 Click Assign Leave Icon
     Wait Until Element Is Visible   xpath://a[@href=${assignLeave}]/img

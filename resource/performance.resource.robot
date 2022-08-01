@@ -4,7 +4,9 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click Performance Menu
-    Click Element               id:menu__Performance
+    Wait Until Element Is Visible       id:menu__Performance     30s
+    Click Element                       id:menu__Performance
+
 Click My Trackers Sub Menu
     Click Element               id:menu_performance_viewMyPerformanceTrackerList
 

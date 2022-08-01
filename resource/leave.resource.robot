@@ -4,7 +4,8 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click Leave Menu
-    Click Element               id:menu_leave_viewLeaveModule
+    Wait Until Element Is Visible       id:menu_leave_viewLeaveModule     30s
+    Click Element                       id:menu_leave_viewLeaveModule
 
 Click Configure Sub Menu
     Click Element               id:menu_leave_Configure

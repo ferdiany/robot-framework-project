@@ -4,7 +4,8 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click Admin Menu
-    Click Element               id:menu_admin_viewAdminModule
+    Wait Until Element Is Visible       id:menu_admin_viewAdminModule     30s
+    Click Element                       id:menu_admin_viewAdminModule
 
 Verify Admin Menu Open
     Element Should Contain      xpath://li[@class="selected"]/a                     User Management
@@ -81,6 +82,9 @@ Verify User Created
     Element Should Contain      xpath://li[@class="selected"]/a                     User Management
 
 Verify Blank Error
+    Wait Until Element Is Enabled       xpath://span[@for='systemUser_employeeName_empName']
+    Wait Until Element Is Enabled       xpath://span[@for='systemUser_userName']
+    Wait Until Element Is Enabled       xpath://span[@for='systemUser_password'] 
     Element Should Contain  xpath://span[@for='systemUser_employeeName_empName']    ${msgEmpNotFound}
     Element Should Contain  xpath://span[@for='systemUser_userName']                ${msgBlankError}
     Element Should Contain  xpath://span[@for='systemUser_password']                ${msgBlankError}
@@ -98,16 +102,20 @@ Verify Confirm Password Error
     Element Should Contain  xpath://span[@for='systemUser_confirmPassword']         ${msgConfirmPassword}
 
 Verify Very Weak Password
-    Element Should Contain  id:systemUser_password_strength_meter                   ${passVeryWeak}
+    Wait Until Element Is Visible   id:systemUser_password_strength_meter       10s
+    Element Should Contain          id:systemUser_password_strength_meter       ${passVeryWeak}
 
 Verify Weak Password
-    Element Should Contain  id:systemUser_password_strength_meter                   ${passWeak}
+    Wait Until Element Is Visible   id:systemUser_password_strength_meter       10s
+    Element Should Contain          id:systemUser_password_strength_meter       ${passWeak}
 
 Verify Better Password
-    Element Should Contain  id:systemUser_password_strength_meter                   ${passBetter}
+    Wait Until Element Is Visible   id:systemUser_password_strength_meter       10s
+    Element Should Contain          id:systemUser_password_strength_meter       ${passBetter}
 
 Verify Strongest Password
-    Element Should Contain  id:systemUser_password_strength_meter                   ${passStrongest}
+    Wait Until Element Is Visible   id:systemUser_password_strength_meter       10s
+    Element Should Contain          id:systemUser_password_strength_meter       ${passStrongest}
 
 Verify Search Found
     [Arguments]             ${search}   ${row}

@@ -7,12 +7,12 @@ Suite Teardown  Close Browser
 
 *** Test Cases ***
 Admin Successfully Go To Admin Menu
-    [Tags]  Positive    Create User
+    [Tags]  Positive
     Click Admin Menu
     Verify Admin Menu Open
 
 Admin Successfully Create New User
-    [Tags]  Positive    Create User
+    [Tags]  Positive
     Click Admin Menu
     Click Add Button
     Choose User Role                ${userRole}
@@ -25,35 +25,35 @@ Admin Successfully Create New User
     Verify User Created
 
 Create User with Blank Field
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     Click Save Button
     Verify Blank Error
 
 Create User with Unlisted Employee
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     Input Employee Name             ${unlistedEmp}
     Verify Unlisted Employee Error
 
 Create User with Invalid Username
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     admin.resource.Input Username   ${invalidData}
     Verify Invalid Username Error
 
 Create User with Invalid Password
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     admin.resource.Input Password   ${invalidData}
     Verify Invalid Password Error
 
 Create User with Mismatch Password
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     admin.resource.Input Password   ${weakPass}
@@ -61,63 +61,63 @@ Create User with Mismatch Password
     Verify Confirm Password Error
 
 Create User with Very Weak Password
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     admin.resource.Input Password   ${veryWeakPass}
     Verify Very Weak Password
 
 Create User with Weak Password
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     admin.resource.Input Password   ${weakPass}
     Verify Weak Password
 
 Create User with Better Password
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     admin.resource.Input Password    ${betterPass}
     Verify Better Password
 
 Create User with Strongest Password
-    [Tags]  Negative    Create User
+    [Tags]  Negative
     Click Admin Menu
     Click Add Button
     admin.resource.Input Password   ${strongestPass}
     Verify Strongest Password
 
 Search By Username
-    [Tags]  Positive    Search User
+    [Tags]  Positive
     Click Admin Menu
     Input Search Username           ${searchUsername}
     Click Search Button
     Verify Search Found             ${searchUsername}   1
 
 Search By Role
-    [Tags]  Positive    Search User
+    [Tags]  Positive
     Click Admin Menu
     Input Search Role               ${userRole}
     Click Search Button
     Verify Search Found             ${userRole}         2
 
 Search By Employee Name
-    [Tags]  Positive    Search User
+    [Tags]  Positive
     Click Admin Menu
     Input Search Employee           ${EmployeeName}
     Click Search Button
     Verify Search Found             ${EmployeeName}     3
 
 Search By Status
-    [Tags]  Positive    Search User
+    [Tags]  Positive
     Click Admin Menu
     Input Search Status             ${userStatus}
     Click Search Button
     Verify Search Found             ${userStatus}       4
 
 Search not Found
-    [Tags]  Negative    Search User
+    [Tags]  Negative
     Click Admin Menu
     Input Search Username           ${unlistedEmp}
     Click Search Button

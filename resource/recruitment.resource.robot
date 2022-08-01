@@ -4,11 +4,12 @@ Resource    ../data/data.robot
 
 *** Keywords ***
 Click Recruitment Menu
-    Click Element               id:menu_recruitment_viewRecruitmentModule
+    Wait Until Element Is Visible       id:menu_recruitment_viewRecruitmentModule     30s
+    Click Element                       id:menu_recruitment_viewRecruitmentModule
 
 Choose Username
     [Arguments]                 ${name}
-    Click Element               id:candidateSearch_candidateName
+    Input Text                  id:candidateSearch_candidateName      ${name}
     Press Keys                  id:candidateSearch_candidateName      RETURN
     sleep                       1.5s
 
@@ -19,7 +20,8 @@ Choose Job Title Vacancies
     sleep                       1.5s
 
 Click Search Button
-    Click Element               id:btnSrch
+    Wait Until Element Is Visible   id:btnSrch          10s
+    Click Element                   id:btnSrch
 
 Click Add Button
     Click Element               id:btnAdd
@@ -62,8 +64,8 @@ Verify Candidate was Added
     Element Should Contain      xpath:(//td[@class="left"][2])[1]        ${name}
 
 Verify Search Candidate Name
-    [Arguments]                 ${name}
-    Element Should Contain      xpath:(//td[@class="left"][2])[1]        ${name}
+    [Arguments]                     ${name}
+    Element Should Contain          xpath:(//td[@class="left"][2])[1]        ${name}
 
 Verify Search Vacancies
     [Arguments]                 ${validator}
