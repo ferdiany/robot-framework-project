@@ -7,7 +7,7 @@ This is my first web automation project using robot framework. I use opensource 
 `sudo pip install robotframework`
 
 [x] Selenium library => v6.x.x <br>
-`sudo pip install selenium2library`
+`sudo pip install robotframework-seleniumlibrary`
 
 ## Running sample
 #### Running Single Test Suites
